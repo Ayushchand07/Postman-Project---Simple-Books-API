@@ -18,19 +18,19 @@ postman-api-testing-project/
 
 ├── collections/
 
-   └── simple-book-api.postman_collection.json
+   -----└── simple-book-api.postman_collection.json
 
 ├── environment/
 
-   └── simple-book-api-env.postman_environment.json
+   -----└── simple-book-api-env.postman_environment.json
 
 ├── data/
 
-   └── testdata.csv        
+   -----└── testdata.csv        
 
 ├── reports/
 
-   └── newman-report.html
+   -----└── newman-report.html
 
 ├── README.md
 
