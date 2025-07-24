@@ -1,0 +1,21 @@
+{
+	"id": "edd7bf2e-7110-4ae7-b461-56e11c62bc56",
+	"name": "Simple_Book_Api_Environment",
+	"values": [
+		{
+			"key": "bookId",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": "Bearer 441242ef427574a024e3393643c2a2c81d3db25356a4a308609228f83da8abf6",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2025-07-24T19:12:02.150Z",
+	"_postman_exported_using": "Postman/11.55.4"
+}
