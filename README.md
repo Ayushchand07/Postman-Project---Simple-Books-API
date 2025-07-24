@@ -16,13 +16,16 @@ JavaScript – for test scripts inside Postman
 
 postman-api-testing-project/
 ├── collections/
-│   └── simple-book-api.postman_collection.json
+   └── simple-book-api.postman_collection.json
+
 ├── environment/
-│   └── simple-book-api-env.postman_environment.json
+   └── simple-book-api-env.postman_environment.json
+
 ├── data/
-│   └── testdata.csv                   # (Optional - for data-driven testing)
+   └── testdata.csv        
+
 ├── reports/
-│   └── newman-report.html
+   └── newman-report.html
 ├── README.md
 
 🔧 How to Run the Tests
