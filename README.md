@@ -15,17 +15,23 @@ JavaScript – for test scripts inside Postman
 📂 Folder Structure
 
 postman-api-testing-project/
+
 ├── collections/
+
    └── simple-book-api.postman_collection.json
 
 ├── environment/
+
    └── simple-book-api-env.postman_environment.json
 
 ├── data/
+
    └── testdata.csv        
 
 ├── reports/
+
    └── newman-report.html
+
 ├── README.md
 
 🔧 How to Run the Tests
