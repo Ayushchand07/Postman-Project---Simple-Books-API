@@ -38,8 +38,8 @@ postman-api-testing-project/
 
 (Inside the folder run)
 
-npm install -g newman 
-npm install -g newman-reporter-htmlextra
+npm install -g newman ||
+npm install -g newman-reporter-htmlextra || 
 newman run collections/simple-book-api.postman_collection.json -e environment/simple-book-api-env.postman_environment.json -r htmlextra
 
 Features Covered
