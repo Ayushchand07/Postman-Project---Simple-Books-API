@@ -60,4 +60,4 @@ Features Covered
 
 ✅ HTML test reporting
 
---
+-------------
