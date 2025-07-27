@@ -1,0 +1,36 @@
+name: Run Postman Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  postman-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Newman and HTML Reporter
+        run: |
+          npm install -g newman newman-reporter-html
+
+      - name: Run Postman Tests with Newman
+        run: |
+          newman run "Collections/Simple-Book-API.postman_collection.json" \
+            -e "Environment/Simple-Book-API.postman_environment.json" \
+            --reporters cli,html \
+            --reporter-html-export Reports/newman-report.html
+
+      - name: Upload HTML Report as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: postman-html-report
+          path: Reports/newman-report.html
