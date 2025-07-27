@@ -11,29 +11,23 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
 
       - name: Install Newman and HTML Reporter
         run: |
-          npm install -g newman newman-reporter-htmlextra
-
-      - name: Create Reports Directory
-        run: mkdir -p Reports
+          npm install -g newman newman-reporter-html
 
       - name: Run Postman Tests with Newman
         run: |
-          echo "Running Newman..."
-          newman run "Collections/simple_Book_Api_Collection.json" \
-            -e "Environment/Simple_Book_Api_Environment.json" \
-            -r htmlextra \
-            --reporter-htmlextra-export Reports/newman-report.html || true
-          echo "Listing Reports folder:"
-          ls -R Reports || echo "No report folder found"
+          newman run "Collections/Simple-Book-API.postman_collection.json" \
+            -e "Environment/Simple-Book-API.postman_environment.json" \
+            --reporters cli,html \
+            --reporter-html-export Reports/newman-report.html
 
       - name: Upload HTML Report as Artifact
         uses: actions/upload-artifact@v4
