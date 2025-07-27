@@ -19,15 +19,17 @@ jobs:
           node-version: '18'
 
       - name: Install Newman and HTML Reporter
-        run: |
-          npm install -g newman newman-reporter-html
+        run: npm install -g newman-reporter-htmlextra
+
+      - name: Create Reports Directory
+        run: mkdir -p Reports
 
       - name: Run Postman Tests with Newman
         run: |
           newman run "Collections/simple_Book_Api_Collection.json" \
             -e "Environment/Simple_Book_Api_Environment.json" \
-            --reporters cli,html \
-            --reporter-html-export Reports/newman-report.html
+            -r htmlextra \
+            --reporter-htmlextra-export Reports/newman-report.html
 
       - name: Upload HTML Report as Artifact
         uses: actions/upload-artifact@v4
